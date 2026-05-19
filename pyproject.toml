@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "xis-pipeline"
+version = "1.0.0"
+description = "Sync Xero and Inflow Inventory data to Supabase — battery-included for GitHub Actions and Power BI."
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Bright Kwame Dogbey", email = "dogbeykwamebright@gmail.com"},
+]
+keywords = ["xero", "inflow", "supabase", "etl", "sync", "powerbi"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Office/Business :: Financial :: Accounting",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+    "supabase>=2.0.0",
+    "python-dateutil>=2.8.2",
+    "pandas>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-mock>=3.0",
+    "build",
+    "twine",
+]
+
+[project.urls]
+Homepage = "https://github.com/quarmebrytejnr/xis-pipeline"
+Repository = "https://github.com/quarmebrytejnr/xis-pipeline"
+Issues = "https://github.com/quarmebrytejnr/xis-pipeline/issues"
+
+[project.scripts]
+xis-sync = "xis.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"xis" = ["py.typed"]

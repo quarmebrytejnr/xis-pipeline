@@ -1,0 +1,33 @@
+# Secrets — never commit these
+.env
+xero_token.json
+*.pem
+*.key
+
+# Build artefacts
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db
